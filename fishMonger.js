@@ -13,20 +13,29 @@ const inventory = boatInventory();
 //                 species: fish.species,
 //                 weight: fish.weight,
 //                 price: fish.price,
-//                 amount: 5
+//                 amount: 10
 //             });
 //         }
+//     }
+//     for (const fish of fishForSale) {
+//         fish.amount = fish.amount * 0.5;
 //     }
 //     return fishForSale;
 // }
 
 const mongerInventory = (chefPrice) => {
-    return inventory
+    const fishForSale = inventory
         .filter(fish => fish.price <= 7.50 && fish.price <= chefPrice && fish.amount >= 10)
         .map(fish => ({
             ...fish,
-            amount: 5
+            amount: 10
         }));
+
+    return fishForSale.map(fish => ({
+        ...fish,
+        amount: fish.amount * 0.5           
     }
+    ));
+}   
 
 module.exports = {mongerInventory};
