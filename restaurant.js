@@ -28,10 +28,8 @@ const fishMenu = (chefPrice) => {
         .join('');
             
     return `            <h1>Menu</h1> 
-    
+
             <article class="menu">${menuItems}</article>`;
 };
 
-const menu = fishMenu(7.50);
-console.log(menu);
 module.exports = {fishMenu};

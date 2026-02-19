@@ -22,7 +22,7 @@ const inventory = boatInventory();
 
 const mongerInventory = (chefPrice) => {
     return inventory
-        .filter(fish => fish.price <= 7.50 &&fish.price <= chefPrice && fish.amount >= 10)
+        .filter(fish => fish.price <= 7.50 && fish.price <= chefPrice && fish.amount >= 10)
         .map(fish => ({
             ...fish,
             amount: 5
